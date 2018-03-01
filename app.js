@@ -1,12 +1,11 @@
-var db = require('./config/database');
+var models = require('./config/models');
 
-var blogSchema = new db.Schema({
-  title:  String
-});
-
-var Blog = db.mongoose.model('Blog', blogSchema);
-
-var blog = new Blog({title: 'hola'});
+var blog = new models.Blog(
+  {
+    title: 'hola', 
+    author: 'mundo'
+  }
+);
 
 blog.save(function (err, doc) {
   if (err) return handleError(err);
