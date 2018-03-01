@@ -42,11 +42,39 @@ module.exports = [
       var author = request.query.author;
       models.Blog.findById(_id,function(err, blog){
         if (err) return handleError(err);
+        if(blog == null) {
+          reply('Documento a editar no se encuentra en la base de datos');
+          return;
+        }
         blog.title = title;
         blog.author = author;
         blog.save(function (err, updatedBlog) {
           if (err) return handleError(err);
           reply(JSON.stringify(updatedBlog));
+        });
+      });
+    }
+  },
+  {
+    method: ['GET', 'POST'],
+    path: 'eliminar',
+    config: {
+      auth: false,
+      pre: [
+        { method: middleware.demo},
+      ],
+    },
+    handler: function (request, reply) {
+      var _id = request.query._id;
+      models.Blog.findById(_id,function(err, blog){
+        if (err) return reply(err);
+        if(blog == null) {
+          reply('Documento a eliminar no se encuentra en la base de datos');
+          return;
+        }
+        blog.remove(function (err, deletedBlog) {
+          //if (err) return reply(err);
+          reply('Se ha eliminado Blog');
         });
       });
     }
