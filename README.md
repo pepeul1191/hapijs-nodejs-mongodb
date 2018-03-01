@@ -2,7 +2,7 @@
 
 Instlación de software y dependencias:
 
-    $ npm install && npm install -g nodemon
+    $ npm install && npm install -g nodemon bower && bower install
 
 Arrancar servicio:
 
