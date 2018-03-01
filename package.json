@@ -9,10 +9,13 @@
   "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.0.7",
+    "ejs": "^2.5.7",
     "hapi": "^16.5.2",
-    "path": "^0.12.7",
+    "inert": "^4.2.1",
+    "mongoose": "^5.0.7",
     "nodemon": "^1.14.1",
-    "inert": "^4.2.1"
+    "path": "^0.12.7",
+    "vision": "^5.3.1",
+    "hapi-routes-loader": "^0.2.0"
   }
 }
