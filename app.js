@@ -56,7 +56,7 @@ server.register(
 		}else{
 			server.views({
 		    engines: {
-		      html: Ejs
+		      html: Ejs,
 		    },
 		    path: __dirname + '/views',
 		    layout: false

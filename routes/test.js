@@ -25,7 +25,10 @@ module.exports = [
       ],
     },
     handler: function (request, reply) {
-      reply.view('test/index');
+      var locals = { 
+        title: 'Test EJS Title' 
+      };
+      reply.view('test/index', locals);
     }
   },
 ];
