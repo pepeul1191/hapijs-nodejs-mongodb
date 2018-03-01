@@ -28,6 +28,21 @@ module.exports = [
     }
   },
   {
+    method: ['GET'],
+    path: 'listar',
+    config: {
+      auth: false,
+      pre: [
+        { method: middleware.demo},
+      ],
+    },
+    handler: function (request, reply) {
+      models.Blog.find({},function(err, docs){
+        reply(JSON.stringify(docs));
+      });
+    }
+  },
+  {
     method: 'GET',
     path: 'view',
     config: {
