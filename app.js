@@ -22,8 +22,8 @@ const Path = require('path');
 const Inert = require('inert');
 const server = new Hapi.Server();
 const HRL = require('hapi-routes-loader');
-//const Vision = require('vision');
-//const Ejs = require('ejs');
+const Vision = require('vision');
+const Ejs = require('ejs');
 const constants = require('./config/constants');
 
 server.connection({
@@ -55,41 +55,35 @@ server.on('response', function (request) {
   }
 });
 
-
 server.register(
   [
     Inert,
+    Vision,
     {
       register: HRL,
       options: {
       	dirname: __dirname, //must be a string with a root path
       	pathRoutes: '/routes'
     	}
-    }
+    },
   ], 
   (err) => {
-	  server.start((err) => {
-	    console.log('Running web app at: ' + server.uri);
-	  });
+	 	if (typeof err !== 'undefined') {
+	 		console.log(err);
+		}else{
+			server.views({
+		    engines: {
+		      html: Ejs
+		    },
+		    path: __dirname + '/views',
+		    layout: false
+		  });
+			server.start((err) => {
+			  console.log('Running HapiJs web app');
+			});
+		}
 	}
 );
-
-/*
-server.register(Vision, function (err) {  
-  if (err) {
-    console.log('Cannot register vision')
-  }
-
-  // configure template support   
-  server.views({
-    engines: {
-      html: Handlebars
-    },
-    path: __dirname + '/views',
-    layout: 'layout'
-  })
-});
-*/
 
 server.route({
   method: 'GET',

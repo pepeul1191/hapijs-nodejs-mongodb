@@ -15,4 +15,17 @@ module.exports = [
       reply('ok');
     }
   },
+  {
+    method: 'GET',
+    path: 'view',
+    config: {
+      auth: false,
+      pre: [
+        //{ method: middleware.demo},
+      ],
+    },
+    handler: function (request, reply) {
+      reply.view('test/index');
+    }
+  },
 ];

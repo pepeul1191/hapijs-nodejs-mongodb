@@ -10,12 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.7",
-    "hapi": "^16.5.2",
+    "hapi": "^16.6.3",
+    "hapi-routes-loader": "^0.2.0",
     "inert": "^4.2.1",
     "mongoose": "^5.0.7",
     "nodemon": "^1.14.1",
     "path": "^0.12.7",
-    "vision": "^5.3.1",
-    "hapi-routes-loader": "^0.2.0"
+    "vision": "^4.1.1"
   }
 }
