@@ -43,6 +43,22 @@ module.exports = [
     }
   },
   {
+    method: ['GET'],
+    path: 'obtener',
+    config: {
+      auth: false,
+      pre: [
+        { method: middleware.demo},
+      ],
+    },
+    handler: function (request, reply) {
+      var _id = request.query._id;
+      models.Blog.findOne({_id: _id},function(err, doc){
+        reply(JSON.stringify(doc));
+      });
+    }
+  },
+  {
     method: 'GET',
     path: 'view',
     config: {
