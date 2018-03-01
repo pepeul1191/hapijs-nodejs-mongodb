@@ -21,6 +21,7 @@ const Hapi = require('hapi');
 const Path = require('path');
 const Inert = require('inert');
 const server = new Hapi.Server();
+const constants = require('./config/constants');
 
 server.connection({
   host: 'localhost',
@@ -30,6 +31,24 @@ server.connection({
     files: {
       relativeTo: Path.join(__dirname, 'public')
     }
+  }
+});
+
+server.ext('onPreResponse', function(request, reply){
+  if (request.response.header) {
+    request.response.header('Server', 'Ubuntu');
+  }
+  reply.continue();
+});
+
+server.on('response', function (request) {
+  if (constants.data['ambiente'] == 'desarrollo'){
+    console.log(
+    	request.info.remoteAddress + ': ' + 
+    	request.method.toUpperCase() + ' ' + 
+    	request.url.path + ' --> ' + 
+    	request.response.statusCode
+    );
   }
 });
 
