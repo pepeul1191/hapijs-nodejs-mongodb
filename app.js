@@ -80,6 +80,6 @@ server.route({
     auth: false,
   },
   handler: function (request, reply) {
-    reply('Error: URL vacía');
+    reply('Error: URL vacía').code(400);
   }
 });
