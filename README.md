@@ -6,11 +6,11 @@ Instlación de software y dependencias:
 
 Arrancar servicio:
 
-    $ npm start
+    $ npm run start:prod {{puerto}}
 
 Arrancer servicio con autoreload con cambios:
 
-    $ npm run dev
+    $ npm run start:dev {{puerto}}
 
 ---
 
@@ -21,3 +21,5 @@ Fuentes:
 + https://stackoverflow.com/questions/7653080/adding-to-an-array-asynchronously-in-node-js
 + https://stackoverflow.com/questions/31331606/how-can-i-add-a-middleware-in-my-route
 + https://hapijs.com/tutorials/routing?lang=en_US
++ https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html
++ https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program

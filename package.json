@@ -5,12 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodejs app.js",
-    "dev": "./node_modules/nodemon/bin/nodemon.js app.js --ignore './public/'"
+    "start:prod": "node app.js",
+    "start:dev": "./node_modules/nodemon/bin/nodemon.js app.js --ignore './public/'"
   },
   "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "ejs": "^2.5.7",
     "hapi": "^16.6.3",
     "hapi-routes-loader": "^0.2.0",

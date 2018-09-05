@@ -11,7 +11,7 @@ const constants = require('./config/constants');
 
 server.connection({
   host: 'localhost',
-  port: 5000,
+  port: process.argv[2],
   routes: {
     cors: true,
     files: {
@@ -19,6 +19,8 @@ server.connection({
     }
   }
 });
+
+console.log('> Aplicación HapiJS ejecutándose en el puerto ' + process.argv[2]);
 
 server.ext('onPreResponse', function(request, reply){
   if (request.response.header) {
@@ -31,9 +33,9 @@ server.ext('onPreResponse', function(request, reply){
 server.on('response', function (request) {
   if (constants.data['ambiente'] == 'desarrollo'){
     console.log(
-    	request.info.remoteAddress + ': ' + 
-    	request.method.toUpperCase() + ' ' + 
-    	request.url.path + ' --> ' + 
+    	request.info.remoteAddress + ': ' +
+    	request.method.toUpperCase() + ' ' +
+    	request.url.path + ' --> ' +
     	request.response.statusCode
     );
   }
@@ -50,7 +52,7 @@ server.register(
       	pathRoutes: '/routes'
     	}
     },
-  ], 
+  ],
   (err) => {
 	 	if (typeof err !== 'undefined') {
 	 		console.log(err);
