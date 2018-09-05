@@ -41,6 +41,7 @@ server.on('response', function (request) {
   }
 });
 
+//registrar directorio de rutas y vistas
 server.register(
   [
     Inert,
@@ -84,6 +85,7 @@ server.route({
   }
 });
 */
+
 //not_found Handler
 server.route({
   method: [ 'GET', 'POST' ],
