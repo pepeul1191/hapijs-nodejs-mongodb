@@ -6,11 +6,11 @@ Instlación de software y dependencias:
 
 Arrancar servicio:
 
-    $ nodejs app.js
+    $ npm start
 
 Arrancer servicio con autoreload con cambios:
 
-    $ nodemon app.js
+    $ npm run dev
 
 ---
 
