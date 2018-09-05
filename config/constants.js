@@ -1,7 +1,8 @@
 const data = {
-  'base_url' : 'http://localhost:5000/',
-  'static_url' : 'http://localhost:5000/',
+  'base_url' : 'http://localhost:3000/',
+  'static_url' : 'http://localhost:3000/',
   'ambiente' : 'desarrollo',
+  'ambiente_static': 'desarrollo',
   'ambiente_csrf': 'activo',
   'ambiente_log': 'activo',
   'csrf': {

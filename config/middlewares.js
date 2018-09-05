@@ -16,7 +16,8 @@ const csrf = function (req, res) {
           'No se puede acceder al recurso',
           'CSRF Token error'
       ]});
-      res(rpta).code(500).takeover();
+      res(rpta).redirect('/error/access/505').takeover();
+      //res(rpta).code(500).takeover();
     }else{
       return res.continue();
     }
