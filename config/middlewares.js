@@ -1,11 +1,28 @@
-const demo = function (request, reply) {
+const constants = require('./constants');
+
+const demo = function (req, res) {
   console.log("middleware demo");
-  return reply.continue();
+  return res.continue();
 };
 
-const csrf = function (request, reply) {
-  console.log("CSRF!!!!!!!!!!!!!!");
-  return reply.continue();
+const csrf = function (req, res) {
+  if (constants.data['ambiente_log'] == 'activo'){
+    var key = constants.data.csrf['key'];
+    var value = constants.data.csrf['value'];
+    if(req.headers[key] != value){
+      var rpta = JSON.stringify({
+        tipo_mensaje: 'error',
+        mensaje: [
+          'No se puede acceder al recurso',
+          'CSRF Token error'
+      ]});
+      res(rpta).code(500).takeover();
+    }else{
+      return res.continue();
+    }
+  }else{
+    return res.continue();
+  }
 };
 
 exports.demo= demo;

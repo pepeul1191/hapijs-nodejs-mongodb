@@ -10,7 +10,12 @@ module.exports = [
     config: {
       auth: false,
       pre: [
-        { method: middleware.demo},
+        {
+          method: middleware.demo
+        },
+        {
+          method: middleware.csrf
+        },
       ],
     },
     handler: function (request, reply) {
