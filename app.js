@@ -70,7 +70,8 @@ server.register(
 		}
 	}
 );
-
+/*
+//handler de archivos estáticos, usar si no se usa not_found Handler
 server.route({
   method: 'GET',
   path: '/{param*}',
@@ -80,6 +81,21 @@ server.route({
       redirectToSlash: true,
       index: true,
     }
+  }
+});
+*/
+//not_found Handler
+server.route({
+  method: [ 'GET', 'POST' ],
+  path: '/{any*}',
+  handler: (req, res) => {
+    var rpta = JSON.stringify({
+      tipo_mensaje: 'error',
+      mensaje: [
+        'No se puede encontrar el recurso',
+        'Error 404'
+    ]});
+    res(rpta).code(404).takeover();
   }
 });
 

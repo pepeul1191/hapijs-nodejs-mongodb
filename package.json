@@ -11,6 +11,7 @@
   "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
   "license": "ISC",
   "dependencies": {
+    "boom": "^7.2.0",
     "dotenv": "^6.0.0",
     "ejs": "^2.5.7",
     "hapi": "^16.6.3",

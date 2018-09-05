@@ -23,3 +23,4 @@ Fuentes:
 + https://hapijs.com/tutorials/routing?lang=en_US
 + https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html
 + https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program
++ https://futurestud.io/tutorials/hapi-how-to-handle-404-responses-for-missing-routes
