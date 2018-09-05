@@ -1,5 +1,5 @@
 'use strict';
-var middleware = require('../config/middleware');
+var middleware = require('../config/middlewares');
 var models = require('../config/models');
 
 module.exports = [
@@ -17,7 +17,7 @@ module.exports = [
       var author = request.query.author;
       var blog = new models.Blog(
         {
-          title: title, 
+          title: title,
           author: author
         }
       );

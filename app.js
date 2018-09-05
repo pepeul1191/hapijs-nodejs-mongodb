@@ -31,7 +31,7 @@ server.ext('onPreResponse', function(request, reply){
 });
 
 server.on('response', function (request) {
-  if (constants.data['ambiente'] == 'desarrollo'){
+  if (constants.data['ambiente_log'] == 'activo'){
     console.log(
     	request.info.remoteAddress + ': ' +
     	request.method.toUpperCase() + ' ' +

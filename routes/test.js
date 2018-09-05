@@ -1,5 +1,5 @@
 'use strict';
-var middleware = require('../config/middleware');
+var middleware = require('../config/middlewares');
 var constants = require('../config/constants');
 var helpers = require('../config/helpers');
 
@@ -28,18 +28,18 @@ module.exports = [
     },
     handler: function (request, reply) {
       var csss = [
-        'bower_components/bootstrap/dist/css/bootstrap.min', 
+        'bower_components/bootstrap/dist/css/bootstrap.min',
         'bower_components/font-awesome/css/font-awesome.min'
       ];
       var jss = [
-        'bower_components/jquery/dist/jquery.min', 
+        'bower_components/jquery/dist/jquery.min',
         'bower_components/bootstrap/dist/js/bootstrap.min'
       ];
       var locals = {
         constants: constants.data,
         title: 'Test EJS Title',
         helpers: helpers,
-        csss: csss, 
+        csss: csss,
         jss: jss,
       };
       reply.view('test/index', locals);
