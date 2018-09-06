@@ -17,7 +17,7 @@ module.exports = [
     },
     handler: function (req, res) {
       var data = JSON.parse(req.payload.data);
-      var pais = new models.Pais({
+      var pais = new models.Ubicacion({
         nombre: data.nombre,
         tipo: 'pais',
       });
@@ -58,7 +58,7 @@ module.exports = [
     handler: function (req, res) {
       var data = JSON.parse(req.payload.data);
       var _id = data.id;
-      models.Pais.findById(_id, function(err, pais){
+      models.Ubicacion.findById(_id, function(err, pais){
         if (err){
           var rpta = JSON.stringify({
             'tipo_mensaje': 'error',
@@ -121,7 +121,7 @@ module.exports = [
       var error = false;
       var tests = [];
       async.each(eliminados, function(eliminado_id, callback){
-        models.Pais.findByIdAndRemove(eliminado_id, function(err, doc){
+        models.Ubicacion.findByIdAndRemove(eliminado_id, function(err, doc){
           if (err){
             callback(err);
             return;

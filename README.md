@@ -12,6 +12,20 @@ Arrancer servicio con autoreload con cambios:
 
     $ npm run start:dev {{puerto}}
 
+Consultas MongoDB:
+
++ SELECT tipo, nombre FROM ubicaciones WHERE pais_id = {{pais_id}} 
+
+    db.ubicaciones.find(
+      {
+        pais_id: ObjectId("5b907d815139f844031cc5a1")
+      },
+      {
+        tipo: 1,
+        nombre:1
+      }
+    )
+
 ---
 
 Fuentes:
