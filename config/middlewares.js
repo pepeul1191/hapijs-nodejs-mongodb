@@ -6,7 +6,7 @@ const demo = function (req, res) {
 };
 
 const csrf = function (req, res) {
-  if (constants.data['ambiente_log'] == 'activo'){
+  if (constants.data['ambiente_csrf'] == 'activo'){
     var key = constants.data.csrf['key'];
     var value = constants.data.csrf['value'];
     if(req.headers[key] != value){

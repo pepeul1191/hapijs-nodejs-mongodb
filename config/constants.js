@@ -3,7 +3,7 @@ const data = {
   'static_url' : 'http://localhost:3000/',
   'ambiente' : 'desarrollo',
   'ambiente_static': 'desarrollo',
-  'ambiente_csrf': 'activo',
+  'ambiente_csrf': 'inactivo',
   'ambiente_log': 'activo',
   'csrf': {
     'key': 'csrf_key',
