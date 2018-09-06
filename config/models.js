@@ -1,6 +1,6 @@
 var db = require('./database');
 
-var Blog = db.mongoose.model('blogs', 
+var Blog = db.mongoose.model('blogs',
   new db.Schema(
     {
       title:  String,
@@ -9,4 +9,14 @@ var Blog = db.mongoose.model('blogs',
   )
 );
 
+var Pais = db.mongoose.model('paises',
+  new db.Schema(
+    {
+      nombre:  String,
+      tipo: String,
+    }
+  )
+);
+
 exports.Blog = Blog;
+exports.Pais = Pais;

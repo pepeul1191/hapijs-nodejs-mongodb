@@ -7,7 +7,7 @@ const data = {
   'ambiente_log': 'activo',
   'csrf': {
     'key': 'csrf_key',
-    'value': 'mpt/sr6eS2AlCRHU7DVThMgFTN08pnfSDf/C94eZx7udfm0lvgaYWLYJttYPKzGKDTlXwVU/d2FOxbKkgNlsTw=='
+    'value': 'PKBcauXg6sTXz7Ddlty0nejVgoUodXL89KNxcrfwkEme0Huqtj6jjt4fP7v2uF4L'
   }
 };
 
