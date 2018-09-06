@@ -9,7 +9,7 @@ DB = Sequel.connect('sqlite://db/ubicaciones.db')
 
 # conexión a base de datos mongodb
 
-DB_MONGO = Mongo::Client.new('mongodb://127.0.0.1:27017/test')
+DB_MONGO = Mongo::Client.new('mongodb://127.0.0.1:27017/ubicaciones')
 Mongo::Logger.logger.level = Logger::FATAL
 
 # modelos base de datos sqlite3

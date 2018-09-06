@@ -26,12 +26,20 @@ Consultas MongoDB:
       }
     )
 
-### Mmigraciones
+### Migraciones SQL
 
 Migraciones con DBMATE - ubicaciones:
 
     $ dbmate -d "db/migrations" -e "DATABASE_UBICACIONES" new <<nombre_de_migracion>>
     $ dbmate -d "db/migrations" -e "DATABASE_UBICACIONES" up
+
+### Comandos backup de MongoDB
+
+    $ mongodump --db ubicaciones --host localhost --port 27017 --out db
+
+### Comandos restore de MongoDB
+
+    $ mongorestore --db ubicaciones --host localhost --port 27017 db/ubicaciones
 
 ---
 
