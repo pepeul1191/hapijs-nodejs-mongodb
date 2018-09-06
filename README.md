@@ -14,7 +14,7 @@ Arrancer servicio con autoreload con cambios:
 
 Consultas MongoDB:
 
-+ SELECT tipo, nombre FROM ubicaciones WHERE pais_id = {{pais_id}} 
++ SELECT tipo, nombre FROM ubicaciones WHERE pais_id = {{pais_id}}
 
     db.ubicaciones.find(
       {
@@ -25,6 +25,13 @@ Consultas MongoDB:
         nombre:1
       }
     )
+
+### Mmigraciones
+
+Migraciones con DBMATE - ubicaciones:
+
+    $ dbmate -d "db/migrations" -e "DATABASE_UBICACIONES" new <<nombre_de_migracion>>
+    $ dbmate -d "db/migrations" -e "DATABASE_UBICACIONES" up
 
 ---
 
