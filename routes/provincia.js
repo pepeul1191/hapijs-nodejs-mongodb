@@ -6,6 +6,44 @@ var database = require('../config/database');
 
 module.exports = [
   {
+    method: ['GET'],
+    path: 'listar/{departamento_id}',
+    config: {
+      auth: false,
+      pre: [
+        {
+          method: middleware.csrf
+        },
+      ],
+    },
+    handler: function (req, res) {
+      models.Ubicacion.find({departamento_id: req.params.departamento_id}, function(err, documents){
+        if (err){
+          var rpta = JSON.parse({
+            'tipo_mensaje': 'error',
+            'mensaje': [
+              'Se ha producido un error en buscar las provincias del departamento',
+              err.toString()
+            ]
+          });
+          res(rpta).code(500);
+        }else{
+          if(documents == null){
+            var rpta = JSON.parse({
+              'tipo_mensaje': 'error',
+              'mensaje': [
+                'Documento buscado no se encuentra en la base de datos'
+              ]
+            });
+            res(rpta).code(200);
+          }else{
+            res(JSON.stringify(documents)).code(200);
+          }
+        }
+      }).select({ nombre: 1 });
+    }
+  },
+  {
     method: ['POST'],
     path: 'crear',
     config: {
