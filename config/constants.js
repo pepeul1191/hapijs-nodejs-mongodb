@@ -4,7 +4,7 @@ const data = {
   'ambiente' : 'desarrollo',
   'ambiente_static': 'desarrollo',
   'ambiente_csrf': 'inactivo',
-  'ambiente_log': 'activo',
+  'ambiente_log': 'inactivo',
   'csrf': {
     'key': 'csrf_key',
     'value': 'PKBcauXg6sTXz7Ddlty0nejVgoUodXL89KNxcrfwkEme0Huqtj6jjt4fP7v2uF4L'
